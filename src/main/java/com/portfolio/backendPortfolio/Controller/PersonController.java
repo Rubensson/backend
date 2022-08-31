@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frtndportfolio.web.app")
 public class PersonController {
     @Autowired IPersonService iPersonService;
     
     //Declaro todos los metodos a usar
     
-    @GetMapping ("person/get")
+    @GetMapping ("/person/get")
     public List<Person> getPerson(){
         return iPersonService.getPersons();
     }
@@ -62,7 +62,7 @@ public class PersonController {
                 iPersonService.savePerson(person);
                 return person;
     }
-    @GetMapping ("person/get/profile")
+    @GetMapping ("/person/get/profile")
     public Person findPerson(){
     return iPersonService.findPerson((long)1);
 }
